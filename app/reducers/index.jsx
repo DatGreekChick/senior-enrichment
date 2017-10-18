@@ -3,26 +3,15 @@ import students from './students';
 import teachers from './teachers';
 import campuses from './campuses';
 
-// delete this after all reducers are completed:
-// const initialState = {
-//   students: [],
-//   newStudent: '',
-//   teachers: [],
-//   newTeacher: '',
-//   campuses: [],
-//   newCampus: ''
-// };
-
+// should I add a currentCampus...?
+// should I add reducers to update all categories...?
 const rootReducer = combineReducers({
   students,
+  newStudentEntry,
   teachers,
-  campuses
+  newTeacherEntry,
+  campuses,
+  newCampusEntry
 });
 
 export default rootReducer
-
-// move this elsewhere - newStudent (?):
-// const CREATE_STUDENT = 'CREATE_STUDENT'
-// export const createStudent = name => {
-//  return { type: CREATE_STUDENT, name };
-// };
