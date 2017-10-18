@@ -3,7 +3,8 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
       { resolve } = require('path'),
-      morgan = require('morgan');
+      morgan = require('morgan'),
+      { Student, Teacher, Campus } = require('../db/models');
 
 const app = express();
 
@@ -13,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 //The code below works because `.use` returns `this` which is `app`. So what we want to return in the `module.exports` is `app`, and we can chain on that declaration because each method invocation returns `app` after mutating based on the middleware
-// functions
+
 module.exports = app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
@@ -36,11 +37,44 @@ if (module === require.main) {
   */
 
   const PORT = 1337;
-
   const db = require('../db');
-  db.sync()
-  .then(() => {
-    console.log('db synced');
-    app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
-  });
+
+  const teachers = [
+    {name: 'Ashi', email: 'ashi@io.com', image: 'url(image.com)'},
+    {name: 'Eliot', email: 'elio@io.com', image: 'url(image.com)'},
+    {name: 'Tom', email: 'tom@io.com', image: 'url(image.com)'},
+    {name: 'Leigh', email: 'leigh@io.com', image: 'url(image.com)'},
+    {name: 'Nimit', email: 'nimit@io.com', image: 'url(image.com)'},
+    {name: 'David', email: 'david@io.com', image: 'url(image.com)'}
+  ];
+
+  const students = [
+    {name: 'Eleni', email: 'eleni@io.com', image: 'url(image.com)'},
+    {name: 'Kyle', email: 'kyle@io.com', image: 'url(image.com)'},
+    {name: 'Cara', email: 'cara@io.com', image: 'url(image.com)'},
+    {name: 'Shiratie', email: 'shiratie@io.com', image: 'url(image.com)'},
+    {name: 'Caryn', email: 'caryn@io.com', image: 'url(image.com)'},
+    {name: 'Joyce', email: 'joyce@io.com', image: 'url(image.com)'}
+  ];
+
+  const campuses = [
+    {name: 'Phobos', location: 'Mars', inception: new Date()},
+    {name: 'New York', location: 'Earth', inception: new Date()},
+    {name: 'Moon', location: 'Milky Way Galaxy', inception: new Date()}
+  ];
+
+  db.sync({ force: true })
+    .then(() => {
+      app.listen(PORT, () => {
+        console.log(`server listening on port ${PORT}`);
+      })
+    })
+    .then(() => Promise.all(students)
+        .then(students => students.map(student => Student.create(student)))
+        .then(() => Promise.all(teachers)
+          .then(teachers => teachers.map(teacher => Teacher.create(teacher))))
+        .then(() => Promise.all(campuses)
+          .then(campuses => campuses.map(campus => Campus.create(campus))))
+    .then(() => console.log('Database seeded.'))
+    .catch(console.error));
 }

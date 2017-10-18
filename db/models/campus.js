@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize'),
-      { STRING, DATE } = Sequelize,
+      { STRING, DATE, INTEGER } = Sequelize,
       db = require('../index');
 
 const Campus = db.define('campuses', {
