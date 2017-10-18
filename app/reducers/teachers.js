@@ -8,7 +8,7 @@ export const getTeachers = teachers => {
 };
 
 export const getTeacher = teacher => {
-  return { type: GET_CAMPUS, teacher }
+  return { type: GET_TEACHER, teacher }
 };
 
 export const fetchCampuses = () => dispatch => {
