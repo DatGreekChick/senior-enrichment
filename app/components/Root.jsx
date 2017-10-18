@@ -2,30 +2,30 @@ import React, { Component } from 'react';
 
 export default class WinterJokes extends Component {
   constructor() {
-    super()
-    this.nextJoke = this.nextJoke.bind(this)
-    this.answer = this.answer.bind(this)
+    super();
+    this.nextJoke = this.nextJoke.bind(this);
+    this.answer = this.answer.bind(this);
   }
 
   componentDidMount() {
-    this.nextJoke()
+    this.nextJoke();
   }
 
   nextJoke() {
     this.setState({
       joke: randomJoke(),
       answered: false,
-    })
+    });
   }
 
   answer() {
-    this.setState({answered: true})
+    this.setState({answered: true});
   }
 
   render() {
     if (!this.state) { return null }
 
-    const {joke, answered} = this.state    
+    const {joke, answered} = this.state;
     return (
       <div>
         <h1 onClick={answered ? this.nextJoke : this.answer}>{joke.q}</h1>
@@ -112,4 +112,4 @@ A: They're both below C level!`
     i % 2 === 0
     ? [...all, {q: row}]
     : [...all.slice(0, all.length - 1), Object.assign({a: row}, all[all.length - 1])],
-    [])
+    []);
