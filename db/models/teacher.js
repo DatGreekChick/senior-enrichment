@@ -1,5 +1,6 @@
-const { STRING, ARRAY } = require('sequelize').Sequelize,
-        db = require('../index');
+const Sequelize = require('sequelize'),
+      { STRING, ARRAY } = Sequelize,
+      db = require('../index');
 
 const Teacher = db.define('teachers', {
   name: {

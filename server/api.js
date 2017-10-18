@@ -1,10 +1,50 @@
 'use strict';
 const api = require('express').Router(),
-      db = require('../db');
+      Campus = require('../db/models/campus'),
+      Student = require('../db/models/student');
 
-// If you aren't getting to this object, but rather the index.html (something with a joke) your path is wrong.
-	// I know this because we automatically send index.html for all requests that don't make sense in our backend.
-	// Ideally you would have something to handle this, so if you have time try that out!
-api.get('/hello', (req, res) => res.send({hello: 'world'}));
+/*
+POST
+- new campus
+- new student
+PUT
+- updated student info for one student
+- updated campus info for one campus
+DELETE
+- a campus
+- a student
+ */
+
+api.get('/campuses', (req, res, next) => {
+  Campus.findAll()
+    .then(campuses => res.json(campuses))
+    .catch(next);
+});
+
+api.get('/campuses/:campusId', (req, res, next) => {
+  Campus.findOne({
+    where: {
+      id: +req.params.campusId
+    }
+  })
+    .then(campus => res.send(campus))
+    .catch(next);
+});
+
+api.get('/students', (req, res, next) => {
+  Student.findAll()
+    .then(students => res.json(students))
+    .catch(next);
+});
+
+api.get('/students/:studentId', (req, res, next) => {
+  Campus.findOne({
+    where: {
+      id: +req.params.studentId
+    }
+  })
+    .then(student => res.send(student))
+    .catch(next);
+});
 
 module.exports = api;

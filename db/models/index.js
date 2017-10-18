@@ -10,9 +10,12 @@ const Student = require('./student'),
 
 // This is also probably a good place for you to set up your associations
 
-Student.belongsTo(Campus);
+// Student.hasOne(Campus);
 
-Teacher.hasMany(Student);
+Teacher.belongsToMany(Student, {
+  through: 'student_instructor',
+  foreignKey: 'teacherId'
+});
 
-Campus.hasMany(Student);
-Campus.hasMany(Teacher);
+// Campus.hasMany(Student);
+// Campus.hasMany(Teacher);
