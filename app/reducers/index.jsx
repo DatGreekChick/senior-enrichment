@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
 
-const initialState = {};
+const initialState = {
+  students: [],
+  teachers: [],
+  campuses: []
+};
 
 const rootReducer = function(state = initialState, action) {
   switch(action.type) {

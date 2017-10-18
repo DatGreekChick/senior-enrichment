@@ -2,6 +2,8 @@
 const api = require('express').Router(),
       { Student, Campus, Teacher } = require('../db/models');
 
+// REFACTOR:
+//
 // const restful = model => {
 //   model.findAll({
 //     include: [{ all: true }]
@@ -11,6 +13,8 @@ const api = require('express').Router(),
 // };
 //
 // api.use('/campuses', restful(Campus));
+//
+// ALSO: use module.exports = require().Router() && chaining
 
 api.get('/campuses', (req, res, next) => {
   Campus.findAll({
