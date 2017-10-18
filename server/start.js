@@ -1,14 +1,15 @@
 'use strict';
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const { resolve } = require('path');
+const express = require('express'),
+      bodyParser = require('body-parser'),
+      { resolve } = require('path'),
+      morgan = require('morgan');
 
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
   // Logging middleware (non-production only)
-  app.use(require('volleyball'))
+  app.use(morgan('dev'));
 }
 
 //The code below works because `.use` returns `this` which is `app`. So what we want to return in the `module.exports` is `app`, and we can chain on that declaration because each method invocation returns `app` after mutating based on the middleware
