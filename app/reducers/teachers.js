@@ -11,10 +11,16 @@ export const getTeacher = teacher => {
   return { type: GET_TEACHER, teacher }
 };
 
-export const fetchCampuses = () => dispatch => {
+export const fetchTeachers = () => dispatch => {
   return axios.get('/api/teachers')
     .then(res => res.data)
     .then(teachers => dispatch(getTeachers(teachers)));
+};
+
+export const fetchTeacher = teacherId => dispatch => {
+  return axios.get(`/api/teachers/${teacherId}`)
+    .then(res => res.data)
+    .then(teacher => dispatch(getTeacher(teacher)));
 };
 
 export const postTeacher = (teacher, history) => dispatch => {

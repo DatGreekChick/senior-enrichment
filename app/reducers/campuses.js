@@ -17,6 +17,12 @@ export const fetchCampuses = () => dispatch => {
     .then(campuses => dispatch(getCampuses(campuses)));
 };
 
+export const fetchCampus = campusId => dispatch => {
+  return axios.get(`/api/campuses/${campusId}`)
+    .then(res => res.data)
+    .then(campus => dispatch(getCampus(campus)));
+};
+
 export const postCampus = (campus, history) => dispatch => {
   return axios.post('/api/campuses', campus)
     .then(res => res.data)

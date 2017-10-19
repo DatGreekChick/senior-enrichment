@@ -17,6 +17,12 @@ export const fetchStudents = () => dispatch => {
     .then(students => dispatch(getStudents(students)));
 };
 
+export const fetchStudent = studentId => dispatch => {
+  return axios.get(`/api/teachers/${studentId}`)
+    .then(res => res.data)
+    .then(student => dispatch(getStudent(student)));
+};
+
 export const postStudent = (student, history) => dispatch => {
   return axios.post('/api/students', student)
     .then(res => res.data)

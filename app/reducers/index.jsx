@@ -20,3 +20,8 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer
+
+// make reducer higher order func
+// keep all form state within the form and take it out from here
+// undo implementations -> look up for reference
+  // http://redux.js.org/docs/recipes/ImplementingUndoHistory.html
