@@ -1,6 +1,5 @@
-/*
-pair Questrial with Lato
-*/
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
 * {
     font-family: Questrial, "Times New Roman", sans-serif;
 }
@@ -9,14 +8,6 @@ body {
     margin: 0;
 }
 
-/*.flex {*/
-    /*display: flex;*/
-/*}*/
-
-/*
-make another class for text to break this up a bit
-also, make a hover feature for the text
-*/
 nav.nav-bar {
     display: flex;
     position: fixed;
@@ -30,7 +21,33 @@ nav.nav-bar {
     border-radius: 0 0 15px 15px;
 }
 
-/*!* all carousel items are .flex  *!*/
+h3:hover {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4vh;
+    margin: 0; padding: 0;
+    background-color: rgba(1, 2, 29, 0.8);
+    color: ghostwhite;
+}
+
+span {
+    padding: 0 10px;
+}
+
+/*!* all carousel items are display: flex;  *!*/
 /*#carousel {*/
     /*height: 100vh;*/
     /*justify-content: center;*/
