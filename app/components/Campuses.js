@@ -9,12 +9,12 @@ const startLink = 'https://vignette.wikia.nocookie.net/witcher/images/',
         'e/e3/Tw2_trailer_schooloftheviper.png/revision/latest?cb=20160416054726'
       ];
 
-campusPhotos.map(img => startLink + img);
-
 const Campuses = () => {
-  return <nav>
-
-  </nav>
+  return <div className="campuses">
+    {
+      campusPhotos.map(img => startLink + img)
+    }
+  </div>
 };
 
 export default Campuses

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize'),
-      { STRING, DATE, INTEGER } = Sequelize,
+      { STRING } = Sequelize,
       db = require('../index');
 
 const Campus = db.define('campuses', {
@@ -8,8 +8,7 @@ const Campus = db.define('campuses', {
     allowNull: false
   },
   location: STRING,
-  image: STRING,
-  inception: DATE
+  image: STRING
 });
 
 module.exports = Campus;

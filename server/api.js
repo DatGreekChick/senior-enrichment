@@ -4,7 +4,7 @@ const api = require('express').Router(),
 
 // REFACTOR:
 //
-// const restful = model => {
+// const restfulPlural = model => {
 //   model.findAll({
 //     include: [{ all: true }]
 //   })
@@ -12,7 +12,19 @@ const api = require('express').Router(),
 //     .catch(next);
 // };
 //
-// api.use('/campuses', restful(Campus));
+// api.use('/campuses', restfulPlural(Campus));
+//
+// const restful = (model, modelId) => {
+//   model.findOne({
+//     where: {
+//        id: +req.params.modelId
+//     }
+//   })
+//     .then(found => res.json(found))
+//     .catch(next);
+// };
+//
+// api.use('/campuses', restfulPlural(Campus));
 //
 // ALSO: use module.exports = require().Router() && chaining
 
@@ -30,7 +42,7 @@ api.get('/campuses/:campusId', (req, res, next) => {
       id: +req.params.campusId
     }
   })
-    .then(campus => res.send(campus))
+    .then(campus => res.json(campus))
     .catch(next);
 });
 
@@ -46,7 +58,7 @@ api.get('/students/:studentId', (req, res, next) => {
       id: +req.params.studentId
     }
   })
-    .then(student => res.send(student))
+    .then(student => res.json(student))
     .catch(next);
 });
 
@@ -64,14 +76,14 @@ api.get('/teachers/:teacherId', (req, res, next) => {
       id: +req.params.teacherId
     }
   })
-    .then(teacher => res.send(teacher))
+    .then(teacher => res.json(teacher))
     .catch(next);
 });
 
 api.post('/campuses', (req, res, next) => {
   Campus.create(req.body)
     .then(campus => {
-      res.json({
+      return res.json({
         status: 200,
         message: 'Campus created successfully',
         campus,
@@ -83,7 +95,7 @@ api.post('/campuses', (req, res, next) => {
 api.post('/students', (req, res, next) => {
   Student.create(req.body)
     .then(student => {
-      res.json({
+      return res.json({
         status: 200,
         message: 'Student created successfully',
         student
@@ -95,7 +107,7 @@ api.post('/students', (req, res, next) => {
 api.post('/teachers', (req, res, next) => {
   Teacher.create(req.body)
     .then(teacher => {
-      res.json({
+      return res.json({
         status: 200,
         message: 'Teacher created successfully',
         teacher
@@ -115,7 +127,7 @@ api.put('/students/:studentId', (req, res, next) => {
     returning: true,
   })
     .then(updatedStudent => {
-      res.json({
+      return res.json({
         status: 200,
         message: 'Student updated successfully',
         student: updatedStudent[1][0]
@@ -135,7 +147,7 @@ api.put('/campuses/:campusId', (req, res, next) => {
     returning: true,
   })
     .then(updatedCampus => {
-      res.json({
+      return res.json({
         status: 200,
         message: 'Campus updated successfully',
         campus: updatedCampus[1][0]
@@ -155,7 +167,7 @@ api.put('/teachers/:teacherId', (req, res, next) => {
     returning: true,
   })
     .then(updatedTeacher => {
-      res.json({
+      return res.json({
         status: 200,
         message: 'Teacher updated successfully',
         teacher: updatedTeacher[1][0]
