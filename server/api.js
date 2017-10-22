@@ -47,7 +47,9 @@ api.get('/campuses/:campusId', (req, res, next) => {
 });
 
 api.get('/students', (req, res, next) => {
-  Student.findAll()
+  Student.findAll({
+    include: [{ all: true }]
+  })
     .then(students => res.json(students))
     .catch(next);
 });

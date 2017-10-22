@@ -9,21 +9,12 @@ const Student = require('./student'),
 	// This works if we all use the same Sequelize instance (instantiated in and exported from `/db/index.js`)
 	// This is an acceptable pattern but it does have limitations in that if you change the name of the model you will have to change every time it is required everywhere
 
-Student.hasOne(Campus);
-Student.hasOne(Teacher);
+Student.belongsTo(Campus);
 
-Teacher.belongsToMany(Student, {
-  through: 'student_instructor',
-  foreignKey: 'teacherId'
-});
+Teacher.hasMany(Student);
+Teacher.belongsTo(Campus);
 
-Campus.belongsToMany(Student, {
-  through: 'campus_students',
-  foreignKey: 'campusId'
-});
-Campus.belongsToMany(Teacher, {
-  through: 'campus_teachers',
-  foreignKey: 'campusId'
-});
+Campus.hasMany(Student);
+Campus.hasMany(Teacher);
 
 module.exports = { db, Student, Teacher, Campus };
