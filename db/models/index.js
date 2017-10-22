@@ -10,6 +10,7 @@ const Student = require('./student'),
 	// This is an acceptable pattern but it does have limitations in that if you change the name of the model you will have to change every time it is required everywhere
 
 Student.hasOne(Campus);
+Student.hasOne(Teacher);
 
 Teacher.belongsToMany(Student, {
   through: 'student_instructor',

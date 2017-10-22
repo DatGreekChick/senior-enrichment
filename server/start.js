@@ -36,32 +36,9 @@ if (module === require.main) {
           ~ To help compare these objects, reference each of their `id` attributes
   */
 
-  const PORT = 1337;
-  const db = require('../db');
-
-  const teachers = [
-    {name: 'Ashi', email: 'ashi@io.com', image: 'url(image.com)'},
-    {name: 'Eliot', email: 'elio@io.com', image: 'url(image.com)'},
-    {name: 'Tom', email: 'tom@io.com', image: 'url(image.com)'},
-    {name: 'Leigh', email: 'leigh@io.com', image: 'url(image.com)'},
-    {name: 'Nimit', email: 'nimit@io.com', image: 'url(image.com)'},
-    {name: 'David', email: 'david@io.com', image: 'url(image.com)'}
-  ];
-
-  const students = [
-    {name: 'Eleni', email: 'eleni@io.com', image: 'url(image.com)'},
-    {name: 'Kyle', email: 'kyle@io.com', image: 'url(image.com)'},
-    {name: 'Cara', email: 'cara@io.com', image: 'url(image.com)'},
-    {name: 'Shiratie', email: 'shiratie@io.com', image: 'url(image.com)'},
-    {name: 'Caryn', email: 'caryn@io.com', image: 'url(image.com)'},
-    {name: 'Joyce', email: 'joyce@io.com', image: 'url(image.com)'}
-  ];
-
-  const campuses = [
-    {name: 'Phobos', location: 'Mars', inception: new Date()},
-    {name: 'New York', location: 'Earth', inception: new Date()},
-    {name: 'Moon', location: 'Milky Way Galaxy', inception: new Date()}
-  ];
+  const PORT = 1337,
+        db = require('../db'),
+        { teachers, students, campuses } = require('./seed');
 
   db.sync({ force: true })
     .then(() => {
