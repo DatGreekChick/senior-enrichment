@@ -10,6 +10,10 @@ const Campus = db.define('campuses', {
   city: STRING,
   location: STRING,
   image: STRING
+}, {
+  defaultScope: {
+    include: [{ all: true }]
+  }
 });
 
 module.exports = Campus;

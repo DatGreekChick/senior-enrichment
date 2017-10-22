@@ -4,7 +4,7 @@ const api = require('express').Router(),
 
 // REFACTOR:
 //
-// const restfulPlural = model => {
+// const restful = model => {
 //   model.findAll({
 //     include: [{ all: true }]
 //   })
@@ -12,19 +12,7 @@ const api = require('express').Router(),
 //     .catch(next);
 // };
 //
-// api.use('/campuses', restfulPlural(Campus));
-//
-// const restful = (model, modelId) => {
-//   model.findOne({
-//     where: {
-//        id: +req.params.modelId
-//     }
-//   })
-//     .then(found => res.json(found))
-//     .catch(next);
-// };
-//
-// api.use('/campuses', restfulPlural(Campus));
+// api.use('/campuses', restful(Campus));
 //
 // ALSO: use module.exports = require().Router() && chaining
 
@@ -42,7 +30,7 @@ api.get('/campuses/:campusId', (req, res, next) => {
       id: +req.params.campusId
     }
   })
-    .then(campus => res.json(campus))
+    .then(campus => res.send(campus))
     .catch(next);
 });
 
