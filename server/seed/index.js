@@ -2,7 +2,7 @@
 
 const teachers = [
   {
-    name: 'Vesemir',
+    name: 'Vesemir of Kaer Morhen',
     email: 'vesemir@io.com',
     image: 'url(https://static.giantbomb.com/uploads/original/8/88352/2747713-vesemirwitcher3.jpg)',
     languagesKnown: ['C', 'C++', 'Java'],

@@ -7,6 +7,7 @@ const Campus = db.define('campuses', {
     type: STRING,
     allowNull: false
   },
+  city: STRING,
   location: STRING,
   image: STRING
 });
