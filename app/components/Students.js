@@ -7,7 +7,7 @@ const Students = props => {
   const { students } = props;
 
   return <div>
-    <h2 className="section-title">Our Students</h2>
+    <h2 className="section-title">OUR STUDENTS</h2>
     <div className="button-div"><button>Become a Student</button></div>
     <ul className="media-list">
       { students.map(student => <Student student={student}

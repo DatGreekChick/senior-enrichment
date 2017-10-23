@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Teacher = props => {
-  const { teacher } = props;
-
+const Teacher = ({ teacher }) => {
   return (
     <li className="media">
       <div>
@@ -17,9 +15,11 @@ const Teacher = props => {
           {teacher.name}
         </h4>
         {teacher.email}<br/>
-        {teacher.languagesKnown.join(', ')}<br/>
-        {teacher.campusName}
-        {teacher.students.join(', ')}
+        {`Languages Known: ${teacher.languagesKnown.join(', ')}`}<br/>
+        {`Campus: ${teacher.campusName}`}<br/>
+        {`Students: ${teacher.students
+          .map(student => student.name)
+          .join(', ')}`}
       </div>
       {/*<a>*/}
       <div className="button-div">

@@ -7,7 +7,7 @@ const Teachers = props => {
   const { teachers } = props;
 
   return <div>
-    <h2 className="section-title">Our Teachers</h2>
+    <h2 className="section-title">OUR TEACHERS</h2>
     <div className="button-div"><button>Become a Teacher</button></div>
     <ul className="media-list">
       { teachers.map(teacher => <Teacher teacher={teacher}

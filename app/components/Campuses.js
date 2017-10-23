@@ -3,15 +3,12 @@ import { connect } from 'react-redux';
 import Campus from './Campus';
 import { fetchCampuses } from "../reducers/campuses";
 
-const Campuses = props => {
-  console.log('props:',props);
-  const { campuses } = props;
-
+const Campuses = ({ campuses }) => {
   return <div>
-    <h2 className="section-title">Our Campuses</h2>
+    <h2 className="section-title">OUR CAMPUSES</h2>
     <div className="button-div"><button>Add a Campus</button></div>
     <ul className="media-list">
-      { campuses.map(campus => <Campuses campus={campus}
+      { campuses.map(campus => <Campus campus={campus}
                                          key={campus.id} />) }
     </ul>
   </div>

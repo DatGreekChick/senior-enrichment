@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans|Questrial');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 
 * {
     font-family: Questrial, "Times New Roman", sans-serif;
@@ -6,7 +7,7 @@
 
 body {
     margin: 0;
-    background-color: #d2c4ba;
+    background: url(https://images6.alphacoders.com/548/548302.jpg);
 }
 
 nav.nav-bar {
@@ -46,6 +47,10 @@ a {
     color: inherit;
 }
 
+br {
+    padding: 10px 0;
+}
+
 button {
     font-family: "Droid Sans", "Times New Roman", sans-serif;
     background-color: #0c0d2e;
@@ -71,6 +76,12 @@ button {
     padding-top: 50px;
     text-align: center;
     color: #e00a10;
+    font-family: "Abril Fatface", "Times New Roman", cursive;
+    font-size: 30pt;
+}
+
+.media-body {
+    color: ghostwhite;
 }
 
 .media-list {
