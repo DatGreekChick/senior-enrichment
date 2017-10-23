@@ -35,7 +35,7 @@ export default class Witcher extends Component {
                    component={Campuses} />
             <Route exact path="/teachers"
                    component={Teachers} />
-            {/*<Redirect to="/" />*/}
+            <Redirect to="/" />
           </Switch>
         </main>
       </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Questrial');
 
 * {
     font-family: Questrial, "Times New Roman", sans-serif;
@@ -47,6 +47,7 @@ a {
 }
 
 button {
+    font-family: "Droid Sans", "Times New Roman", sans-serif;
     background-color: #0c0d2e;
     color: ghostwhite;
     font-size: 15px;

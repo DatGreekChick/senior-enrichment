@@ -4,6 +4,7 @@ import Campus from './Campus';
 import { fetchCampuses } from "../reducers/campuses";
 
 const Campuses = props => {
+  console.log('props:',props);
   const { campuses } = props;
 
   return <div>

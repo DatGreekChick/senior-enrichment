@@ -3,13 +3,13 @@ import axios from 'axios';
 const GET_TEACHERS = 'GET_TEACHERS',
       GET_TEACHER = 'GET_TEACHER';
 
-export const getTeachers = teachers => {
-  return { type: GET_TEACHERS, teachers }
-};
+export const getTeachers = teachers => ({
+  type: GET_TEACHERS, teachers
+});
 
-export const getTeacher = teacher => {
-  return { type: GET_TEACHER, teacher }
-};
+export const getTeacher = teacher => ({
+  type: GET_TEACHER, teacher
+});
 
 export const fetchTeachers = () => dispatch => {
   return axios.get('/api/teachers')

@@ -1,8 +1,8 @@
 const CREATE_CAMPUS = 'CREATE_CAMPUS';
 
-export const createCampus = campus => {
-  return { type: CREATE_CAMPUS, campus };
-};
+export const createCampus = campus => ({
+  type: CREATE_CAMPUS, campus
+});
 
 const newCampusEntry = (state = '', action) => {
   switch (action.type) {

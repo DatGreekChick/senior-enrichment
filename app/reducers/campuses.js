@@ -3,13 +3,13 @@ import axios from 'axios';
 const GET_CAMPUSES = 'GET_CAMPUSES',
       GET_CAMPUS = 'GET_CAMPUS';
 
-export const getCampuses = campuses => {
-  return { type: GET_CAMPUSES, campuses }
-};
+export const getCampuses = campuses => ({
+  type: GET_CAMPUSES, campuses
+});
 
-export const getCampus = campus => {
-  return { type: GET_CAMPUS, campus }
-};
+export const getCampus = campus => ({
+  type: GET_CAMPUS, campus
+});
 
 export const fetchCampuses = () => dispatch => {
   return axios.get('/api/campuses')
