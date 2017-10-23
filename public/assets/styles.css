@@ -45,6 +45,48 @@ a {
     color: inherit;
 }
 
+button {
+    background-color: #0c0d2e;
+    color: ghostwhite;
+    font-size: 15px;
+    display: inline-block;
+    align-items: center;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.media-left {
+
+}
+
+.media-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.media-object {
+    padding: 40px 0;
+    margin: 0 10px;
+    border-radius: 50%;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.media-heading {
+    margin-bottom: -0.5px;
+    font-size: 20pt;
+}
+
 footer {
     bottom: -96px;
     display: flex;

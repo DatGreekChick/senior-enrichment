@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { fetchStudents } from "../reducers/students";
+import store from '../store';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -10,8 +12,8 @@ import Teachers from './Teachers';
 import Campuses from './Campuses';
 
 export default class Witcher extends Component {
-  constructor() {
-    super();
+  componentDidMount() {
+    store.dispatch(fetchStudents());
   }
 
   render() {

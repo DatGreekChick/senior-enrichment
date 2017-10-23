@@ -7,6 +7,8 @@ const Students = props => {
   const { students } = props;
 
   return <div>
+    <h2 className="section-title">Our Students</h2>
+    <button>Become a Student</button>
     <ul className="media-list">
       { students.map(student => <Student student={student}
                                           key={student.id} />) }
@@ -14,22 +16,14 @@ const Students = props => {
   </div>
 };
 
-const mapStateToProps = (state, ownProps) => {
-  // const studentId = +ownProps.match.params.id;
-
-  return {
-    // student: state.students.find(student => {
-    //   return student.id === studentId || { name: '' }
-    // }),
-    students: state.students,
-    // studentId
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  students: state.students
+});
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchStudents() {
-      dispatch(fetchStudents());
+      dispatch(fetchStudents);
     }
   };
 };
