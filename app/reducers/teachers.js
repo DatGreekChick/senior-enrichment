@@ -14,13 +14,15 @@ export const getTeacher = teacher => ({
 export const fetchTeachers = () => dispatch => {
   return axios.get('/api/teachers')
     .then(res => res.data)
-    .then(teachers => dispatch(getTeachers(teachers)));
+    .then(teachers => dispatch(getTeachers(teachers)))
+    .catch(err => console.error(err));
 };
 
 export const fetchTeacher = teacherId => dispatch => {
   return axios.get(`/api/teachers/${teacherId}`)
     .then(res => res.data)
-    .then(teacher => dispatch(getTeacher(teacher)));
+    .then(teacher => dispatch(getTeacher(teacher)))
+    .catch(err => console.error(err));
 };
 
 export const postTeacher = (teacher, history) => dispatch => {
@@ -29,7 +31,8 @@ export const postTeacher = (teacher, history) => dispatch => {
     .then(newTeacher => {
       dispatch(getTeacher(newTeacher));
       history.push(`/teachers/${newTeacher.id}`);
-    });
+    })
+    .catch(err => console.error(err));
 };
 
 const teachers = (state = [], action) => {

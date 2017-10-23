@@ -14,13 +14,15 @@ export const getCampus = campus => ({
 export const fetchCampuses = () => dispatch => {
   return axios.get('/api/campuses')
     .then(res => res.data)
-    .then(campuses => dispatch(getCampuses(campuses)));
+    .then(campuses => dispatch(getCampuses(campuses)))
+    .catch(err => console.error(err));
 };
 
 export const fetchCampus = campusId => dispatch => {
   return axios.get(`/api/campuses/${campusId}`)
     .then(res => res.data)
-    .then(campus => dispatch(getCampus(campus)));
+    .then(campus => dispatch(getCampus(campus)))
+    .catch(err => console.error(err));
 };
 
 export const postCampus = (campus, history) => dispatch => {
@@ -29,7 +31,8 @@ export const postCampus = (campus, history) => dispatch => {
     .then(newCampus => {
       dispatch(getCampus(newCampus));
       history.push(`/campuses/${newCampus.id}`);
-    });
+    })
+    .catch(err => console.error(err));
 };
 
 const campuses = (state = [], action) => {

@@ -11,6 +11,7 @@ import Footer from './Footer';
 
 import Carousel from './Carousel';
 import Students from './Students';
+import Student from './Student';
 import Teachers from './Teachers';
 import Campuses from './Campuses';
 
@@ -30,12 +31,13 @@ export default class Witcher extends Component {
           <Switch>
             <Route exact path="/" component={Carousel}/>
             <Route exact path="/students"
-                   component={Students} />
+                   component={Students}/>
+            <Route path="students/:studentId" component={Student} />
             <Route exact path="/campuses"
-                   component={Campuses} />
+                   component={Campuses}/>
             <Route exact path="/teachers"
-                   component={Teachers} />
-            <Redirect to="/" />
+                   component={Teachers}/>
+            <Redirect to="/"/>
           </Switch>
         </main>
       </div>

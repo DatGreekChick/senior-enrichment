@@ -14,13 +14,15 @@ export const getStudent = student => ({
 export const fetchStudents = () => dispatch => {
   return axios.get('/api/students')
     .then(res => res.data)
-    .then(students => dispatch(getStudents(students)));
+    .then(students => dispatch(getStudents(students)))
+    .catch(err => console.error(err));
 };
 
 export const fetchStudent = studentId => dispatch => {
   return axios.get(`/api/teachers/${studentId}`)
     .then(res => res.data)
-    .then(student => dispatch(getStudent(student)));
+    .then(student => dispatch(getStudent(student)))
+    .catch(err => console.error(err));
 };
 
 export const postStudent = (student, history) => dispatch => {
@@ -29,7 +31,8 @@ export const postStudent = (student, history) => dispatch => {
     .then(newStudent => {
       dispatch(getStudent(newStudent));
       history.push(`/students/${newStudent.id}`);
-    });
+    })
+    .catch(err => console.error(err));
 };
 
 const students = (state = [], action) => {
