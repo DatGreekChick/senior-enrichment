@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    background-color: #d2c4ba;
 }
 
 nav.nav-bar {
@@ -49,32 +50,39 @@ button {
     background-color: #0c0d2e;
     color: ghostwhite;
     font-size: 15px;
-    display: inline-block;
-    align-items: center;
+    box-shadow: none;
+    border-radius: 5px;
+    line-height: 2;
+    outline: none;
 }
 
-.delete-btn {
-    background-color: red;
-}
-
-.section-title {
+.button-div {
     text-align: center;
 }
 
-.media-left {
+.delete-btn {
+    line-height: 1;
+    background-color: #e00a10;
+    margin-top: 10px;
+}
 
+.section-title {
+    padding-top: 50px;
+    text-align: center;
+    color: #e00a10;
 }
 
 .media-list {
-    list-style: none;
     display: flex;
+    list-style: none;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .media-object {
-    padding: 40px 0;
+    padding: 30px 0;
     margin: 0 10px;
     border-radius: 50%;
     max-width: 200px;
@@ -83,6 +91,7 @@ button {
 }
 
 .media-heading {
+    margin-top: -15px;
     margin-bottom: -0.5px;
     font-size: 20pt;
 }

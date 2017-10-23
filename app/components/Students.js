@@ -8,7 +8,7 @@ const Students = props => {
 
   return <div>
     <h2 className="section-title">Our Students</h2>
-    <button>Become a Student</button>
+    <div className="button-div"><button>Become a Student</button></div>
     <ul className="media-list">
       { students.map(student => <Student student={student}
                                           key={student.id} />) }

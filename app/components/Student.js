@@ -5,12 +5,12 @@ const Student = props => {
 
   return (
     <li className="media">
-      <div className="media=left">
-        {/*<a href={`/students/${student.id}`}>*/}
+      <div>
+        <a href={`/students/${student.id}`}>
           <img className="media-object"
                src={student.image}
                alt={`${student.name} image`}/>
-        {/*</a>*/}
+        </a>
       </div>
       <div className="media-body">
         <h4 className="media-heading">
@@ -19,7 +19,11 @@ const Student = props => {
         {student.email}<br/>
         {student.campusName}
       </div>
-      <button className="delete-btn">x</button>
+      {/*<a>*/}
+        <div className="button-div">
+          <button className="delete-btn">x</button>
+        </div>
+      {/*</a>*/}
     </li>
   );
 };

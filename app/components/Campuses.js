@@ -1,20 +1,34 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import store from '../store.jsx';
+import { connect } from 'react-redux';
+import Campus from './Campus';
+import { fetchCampuses } from "../reducers/campuses";
 
-const startLink = 'https://vignette.wikia.nocookie.net/witcher/images/',
-      campusPhotos = [
-        '4/4b/Wolf_School_medallion.png/revision/latest?cb=20151008164535',
-        'd/db/The_witcher_cat_school_medallion.png/revision/latest?cb=20150926081211',
-        'e/e3/Tw2_trailer_schooloftheviper.png/revision/latest?cb=20160416054726'
-      ];
+const Campuses = props => {
+  const { campuses } = props;
 
-const Campuses = () => {
-  return <div className="campuses">
-    {
-      campusPhotos.map(img => startLink + img)
-    }
+  return <div>
+    <h2 className="section-title">Our Campuses</h2>
+    <div className="button-div"><button>Add a Campus</button></div>
+    <ul className="media-list">
+      { campuses.map(campus => <Campuses campus={campus}
+                                         key={campus.id} />) }
+    </ul>
   </div>
 };
 
-export default Campuses
+const mapStateToProps = (state, ownProps) => ({
+  campuses: state.campuses
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCampuses() {
+      dispatch(fetchCampuses);
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Campuses);

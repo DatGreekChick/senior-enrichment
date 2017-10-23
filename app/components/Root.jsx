@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { fetchStudents } from "../reducers/students";
 import store from '../store';
+
+import { fetchStudents } from "../reducers/students";
+import { fetchCampuses } from "../reducers/campuses";
+import { fetchTeachers } from "../reducers/teachers";
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -14,6 +17,8 @@ import Campuses from './Campuses';
 export default class Witcher extends Component {
   componentDidMount() {
     store.dispatch(fetchStudents());
+    store.dispatch(fetchCampuses());
+    store.dispatch(fetchTeachers());
   }
 
   render() {
@@ -24,11 +29,11 @@ export default class Witcher extends Component {
         <main>
           <Switch>
             <Route exact path="/" component={Carousel}/>
-            <Route path="/students"
+            <Route exact path="/students"
                    component={Students} />
-            <Route path="/campuses"
+            <Route exact path="/campuses"
                    component={Campuses} />
-            <Route path="/teachers"
+            <Route exact path="/teachers"
                    component={Teachers} />
             {/*<Redirect to="/" />*/}
           </Switch>
