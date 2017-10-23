@@ -5,24 +5,28 @@ const teachers = [
     name: 'Vesemir of Kaer Morhen',
     email: 'vesemir@io.com',
     image: 'url(https://static.giantbomb.com/uploads/original/8/88352/2747713-vesemirwitcher3.jpg)',
-    languagesKnown: ['C', 'C++', 'Java']
+    languagesKnown: ['C', 'C++', 'Java'],
+    campusName: 'School of the Wolf'
   },
   {
     name: 'Geralt of Rivia',
     email: 'geralt@io.com',
-    image: 'url(https://static.comicvine.com/uploads/original/11123/111235159/5402943-sin+t%C3%ADtulo-1.jpg)'
+    image: 'url(https://static.comicvine.com/uploads/original/11123/111235159/5402943-sin+t%C3%ADtulo-1.jpg)',
+    campusName: 'School of the Wolf'
   },
   {
     name: 'Letho of Gulet',
     email: 'letho@io.com',
     image: 'url(https://lh3.googleusercontent.com/-SNc3BFGIoXQ/VqGUzVUM1oI/AAAAAAAAAG0/P4UO4X0Rpl0/w800-h800/Letho%2Bof%2Bgulet.jpg)',
-    languagesKnown: ['C#']
+    languagesKnown: ['C#'],
+    campusName: 'School of the Viper'
   },
   {
     name: 'Gaetan',
     email: 'gaetan@io.com',
     image: 'url(http://static.tvtropes.org/pmwiki/pub/images/gaetan_tw3.png)',
-    languagesKnown: ['Ruby']
+    languagesKnown: ['Ruby'],
+    campusName: 'School of the Cat'
   }
 ];
 
@@ -30,27 +34,42 @@ const students = [
   {
     name: 'Ciri the Ashen One',
     email: 'ciri@io.com',
-    image: 'url(https://thewitcher3.wiki.fextralife.com/file/The-Witcher-3/ciri.jpg)'
+    image: 'url(https://thewitcher3.wiki.fextralife.com/file/The-Witcher-3/ciri.jpg)',
+    campusName: 'School of the Wolf',
+    teacherName: 'Geralt of Rivia',
+    teacherId: 2
   },
   {
     name: 'Lambert',
     email: 'lambert@io.com',
-    image: 'url(https://vignette.wikia.nocookie.net/non-aliencreatures/images/4/4f/Lambert_%28The_Witcher%29.png/revision/latest?cb=20170414170748)'
+    image: 'url(https://vignette.wikia.nocookie.net/non-aliencreatures/images/4/4f/Lambert_%28The_Witcher%29.png/revision/latest?cb=20170414170748)',
+    campusName: 'School of the Wolf',
+    teacherName: 'Vesemir of Kaer Morhen',
+    teacherId: 1
   },
   {
     name: 'Eskel',
     email: 'eskel@io.com',
-    image: 'url(https://thewitcher3.wiki.fextralife.com/file/The-Witcher-3/eskel.jpg)'
+    image: 'url(https://thewitcher3.wiki.fextralife.com/file/The-Witcher-3/eskel.jpg)',
+    campusName: 'School of the Wolf',
+    teacherName: 'Vesemir of Kaer Morhen',
+    teacherId: 1
   },
   {
     name: 'Letho of Gulet',
     email: 'letho@io.com',
-    image: 'url(https://lh3.googleusercontent.com/-SNc3BFGIoXQ/VqGUzVUM1oI/AAAAAAAAAG0/P4UO4X0Rpl0/w800-h800/Letho%2Bof%2Bgulet.jpg)'
+    image: 'url(https://lh3.googleusercontent.com/-SNc3BFGIoXQ/VqGUzVUM1oI/AAAAAAAAAG0/P4UO4X0Rpl0/w800-h800/Letho%2Bof%2Bgulet.jpg)',
+    campusName: 'School of the Viper',
+    teacherName: 'Letho of Gulet',
+    teacherId: 3
   },
   {
     name: 'Gaetan',
     email: 'gaetan@io.com',
-    image: 'url(http://static.tvtropes.org/pmwiki/pub/images/gaetan_tw3.png)'
+    image: 'url(http://static.tvtropes.org/pmwiki/pub/images/gaetan_tw3.png)',
+    campusName: 'School of the Cat',
+    teacherName: 'Gaetan',
+    teacherId: 4
   }
 ];
 
