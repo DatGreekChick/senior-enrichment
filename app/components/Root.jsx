@@ -14,11 +14,11 @@ import Carousel from './Carousel';
 import Students from './Students';
 import Student from './Student';
 import NewStudentEntry from "./NewStudentEntry";
+import newStudentEntry from "../reducers/newStudentEntry";
 
 import Teachers from './Teachers';
 
 import Campuses from './Campuses';
-import newStudentEntry from "../reducers/newStudentEntry";
 
 export default class Witcher extends Component {
   componentDidMount() {

@@ -19,11 +19,9 @@ const Student = ({ student }) => {
         {`Campus: ${student.campusName}`}<br/>
         {`Teacher: ${student.teacher.name}`}
       </div>
-      <Link to='/new-student'>
-        <div className="button-div">
-          <button type="submit" className="delete-btn">x</button>
-        </div>
-      </Link>
+      <div className="button-div">
+        <button type="submit" className="delete-btn">x</button>
+      </div>
     </li>
   );
 };

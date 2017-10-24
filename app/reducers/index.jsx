@@ -7,8 +7,6 @@ import teachers from './teachers';
 import campuses from './campuses';
 // import newCampusEntry from './newCampusEntry';
 
-// should I add reducers to update all categories...?
-// should I add a delete reducer for all categories...?
 const rootReducer = combineReducers({
   students,
   newStudentEntry,
@@ -20,6 +18,8 @@ const rootReducer = combineReducers({
 
 export default rootReducer
 
+// HOW TO REFACTOR THIS:
+//
 // make reducer higher order func
 // keep all form state within the form and take it out from here
 // undo implementations -> look up for reference
