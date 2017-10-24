@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Campus = ({ campus }) => {
-
   return (
     <li className="media">
       <div>

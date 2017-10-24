@@ -10,16 +10,22 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 import Carousel from './Carousel';
+
 import Students from './Students';
 import Student from './Student';
+import NewStudentEntry from "./NewStudentEntry";
+
 import Teachers from './Teachers';
+
 import Campuses from './Campuses';
+import newStudentEntry from "../reducers/newStudentEntry";
 
 export default class Witcher extends Component {
   componentDidMount() {
     store.dispatch(fetchStudents());
     store.dispatch(fetchCampuses());
     store.dispatch(fetchTeachers());
+    store.dispatch(newStudentEntry());
   }
 
   render() {
@@ -32,7 +38,8 @@ export default class Witcher extends Component {
             <Route exact path="/" component={Carousel}/>
             <Route exact path="/students"
                    component={Students}/>
-            <Route path="students/:studentId" component={Student} />
+            <Route exact path="students/:studentId" component={Student} />
+            <Route exact path="/new-student" component={NewStudentEntry}/>
             <Route exact path="/campuses"
                    component={Campuses}/>
             <Route exact path="/teachers"

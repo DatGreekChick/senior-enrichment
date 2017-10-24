@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Student = ({ student }) => {
   return (
@@ -18,11 +19,11 @@ const Student = ({ student }) => {
         {`Campus: ${student.campusName}`}<br/>
         {`Teacher: ${student.teacher.name}`}
       </div>
-      {/*<a>*/}
+      <Link to='/new-student'>
         <div className="button-div">
-          <button className="delete-btn">x</button>
+          <button type="submit" className="delete-btn">x</button>
         </div>
-      {/*</a>*/}
+      </Link>
     </li>
   );
 };
