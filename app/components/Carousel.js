@@ -12,16 +12,12 @@ const carouselImages = [
   'https://static.cdprojektred.com/thewitcher.com/media/wallpapers/witcher3/full/thewitcher.com_en_1920x1080_59ad4d4a17395.jpg'
 ]
 
-export default () => <Carousel infiniteLoop={true}
-                      showThumbs={false}
-                      showArrows={true}
-                      useKeyboardArrows={true}
-                      autoPlay={true}
-                      showStatus={false}
-                      style={styles}>
+export default () => <Carousel infiniteLoop={true} showThumbs={false}
+                               showArrows={true} useKeyboardArrows={true}
+                               autoPlay={true} showStatus={false} style={styles}>
   {
     carouselImages.map((img, i) => {
         return <img src={img} key={i} alt={`image ${i}`}/>
       })
   }
-</Carousel>
+  </Carousel>

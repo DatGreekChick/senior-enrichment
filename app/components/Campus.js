@@ -1,13 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 export default ({ campus }) => <li className="media">
   <div>
-    <NavLink to={`/campuses/${campus.id}`}>
+    <a href={`/campuses/${campus.id}`}>
       <img className="media-object"
            src={campus.image}
            alt={`${campus.name} image`}/>
-    </NavLink>
+    </a>
   </div>
   <div className="media-body">
     <h4 className="media-heading">

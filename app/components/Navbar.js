@@ -5,7 +5,9 @@ const logo = 'https://vignette.wikia.nocookie.net/witcher/images/3/38/TW3_Englis
 
 export default () => <nav className="nav-bar">
   <Link to='/'>
-    <img className="logo" src={logo} alt="witcher-logo"/>
+    <img className="logo"
+         src={logo}
+         alt="witcher-logo"/>
   </Link>
   <Link to='/students'><h3>Students</h3></Link>
   <Link to='/teachers'><h3>Teachers</h3></Link>

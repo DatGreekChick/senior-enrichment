@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 import students from './students'
-// import newStudentEntry from './newStudentEntry'
+import newStudentEntry from './newStudentEntry'
 import teachers from './teachers'
 // import newTeacherEntry from './newTeacherEntry'
 import campuses from './campuses'

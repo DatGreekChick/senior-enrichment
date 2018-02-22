@@ -5,19 +5,14 @@ import { postStudent } from '../reducers/students'
 
 const NewStudentEntry = ({ newStudentEntry, handleSubmit, handleChange }) =>
   <form onSubmit={handleSubmit}>
-    <div className='form-group'>
-      <label htmlFor='name'>Name:  </label>
-      <input
-        value={newStudentEntry}
-        onChange={handleChange}
-        className='form-control'
-        type='text'
-        name='studentName'
-        placeholder='Enter student name'
-      />
+    <div className="form-group">
+      <label htmlFor="name">Name:  </label>
+      <input value={newStudentEntry} onChange={handleChange}
+             className="form-control" type="text"
+             name="studentName" placeholder="Enter student name"/>
     </div>
-    <div className='form-group'>
-      <button type='submit'>Create Student</button>
+    <div className="form-group">
+      <button type="submit">Create Student</button>
     </div>
   </form>
 

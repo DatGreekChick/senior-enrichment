@@ -12,7 +12,7 @@ export const writeStudentName = studentName => ({
 const newStudentEntry = (state = '', action) => {
   switch (action.type) {
     case CREATE_STUDENT:
-      return action.student
+      return [...state, state.students.concat(action.student)]
 
     case WRITE_STUDENT_NAME:
       return action.studentName
