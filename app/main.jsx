@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import store from './store.jsx'
 import Root from './components/Root'
@@ -15,6 +15,6 @@ render (
     </Router>
   </Provider>,
   main
-);
+)
 
 // Calling main as a global variable

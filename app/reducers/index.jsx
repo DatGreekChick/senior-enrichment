@@ -1,20 +1,20 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import students from './students';
-import newStudentEntry from './newStudentEntry';
-import teachers from './teachers';
-// import newTeacherEntry from './newTeacherEntry';
-import campuses from './campuses';
-// import newCampusEntry from './newCampusEntry';
+import students from './students'
+// import newStudentEntry from './newStudentEntry'
+import teachers from './teachers'
+// import newTeacherEntry from './newTeacherEntry'
+import campuses from './campuses'
+// import newCampusEntry from './newCampusEntry'
 
 const rootReducer = combineReducers({
   students,
-  newStudentEntry,
+  // newStudentEntry,
   teachers,
   // newTeacherEntry,
   campuses,
   // newCampusEntry
-});
+})
 
 export default rootReducer
 
