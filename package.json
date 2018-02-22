@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha **/*.test.js *.test.js",
     "build": "webpack",
-    "build-watch": "webpack -w",
+    "build-watch": "webpack --watch --progress",
     "start": "nodemon server/start.js"
   },
   "keywords": [
@@ -35,8 +35,7 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0",
-    "sequelize": "^4.7.4",
-    "volleyball": "^1.4.1"
+    "sequelize": "^4.7.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

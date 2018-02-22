@@ -3,18 +3,16 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
 
 import store from './store.jsx'
 import Root from './components/Root'
+import { BrowserRouter as Router, browserHistory} from 'react-router'
 
 render (
   <Provider store={store}>
-    <Router>
+    <Router history={browserHistory}>
       <Root/>
     </Router>
   </Provider>,
-  main
+  document.getElementById('main')
 )
-
-// Calling main as a global variable

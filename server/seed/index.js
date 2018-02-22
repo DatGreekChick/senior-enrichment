@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const teachers = [
   {
@@ -28,7 +28,7 @@ const teachers = [
     languagesKnown: ['Ruby'],
     campusName: 'School of the Cat'
   }
-];
+]
 
 const students = [
   {
@@ -71,7 +71,7 @@ const students = [
     teacherName: 'Gaetan',
     teacherId: 4
   }
-];
+]
 
 const campuses = [
   {
@@ -92,6 +92,6 @@ const campuses = [
     city: 'Korath Desert',
     location: 'Empire of Nilfgaard'
   }
-];
+]
 
-module.exports = { teachers, students, campuses };
+module.exports = { teachers, students, campuses }

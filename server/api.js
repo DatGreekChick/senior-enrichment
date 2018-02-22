@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 const api = require('express').Router(),
-      { Student, Campus, Teacher } = require('../db/models');
+      { Student, Campus, Teacher } = require('../db/models')
 
 // REFACTOR:
 //
@@ -9,10 +9,10 @@ const api = require('express').Router(),
 //     include: [{ all: true }]
 //   })
 //     .then(all => res.json(all))
-//     .catch(next);
-// };
+//     .catch(next)
+// }
 //
-// api.use('/campuses', restful(Campus));
+// api.use('/campuses', restful(Campus))
 //
 // ALSO: use module.exports = require().Router() && chaining
 
@@ -21,8 +21,8 @@ api.get('/campuses', (req, res, next) => {
     include: [{ all: true }]
   })
     .then(campuses => res.json(campuses))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.get('/campuses/:campusId', (req, res, next) => {
   Campus.findOne({
@@ -31,16 +31,16 @@ api.get('/campuses/:campusId', (req, res, next) => {
     }
   })
     .then(campus => res.send(campus))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.get('/students', (req, res, next) => {
   Student.findAll({
     include: [{ all: true }]
   })
     .then(students => res.json(students))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.get('/students/:studentId', (req, res, next) => {
   Student.findOne({
@@ -49,16 +49,16 @@ api.get('/students/:studentId', (req, res, next) => {
     }
   })
     .then(student => res.json(student))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.get('/teachers', (req, res, next) => {
   Teacher.findAll({
     include: [{ all: true }]
   })
     .then(teachers => res.json(teachers))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.get('/teachers/:teacherId', (req, res, next) => {
   Teacher.findOne({
@@ -67,8 +67,8 @@ api.get('/teachers/:teacherId', (req, res, next) => {
     }
   })
     .then(teacher => res.json(teacher))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.post('/campuses', (req, res, next) => {
   Campus.create(req.body)
@@ -77,10 +77,10 @@ api.post('/campuses', (req, res, next) => {
         status: 200,
         message: 'Campus created successfully',
         campus,
-      });
+      })
     })
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.post('/students', (req, res, next) => {
   Student.create(req.body)
@@ -91,8 +91,8 @@ api.post('/students', (req, res, next) => {
         student
       })
     })
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.post('/teachers', (req, res, next) => {
   Teacher.create(req.body)
@@ -103,8 +103,8 @@ api.post('/teachers', (req, res, next) => {
         teacher
       })
     })
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.put('/students/:studentId', (req, res, next) => {
   Student.update({
@@ -121,10 +121,10 @@ api.put('/students/:studentId', (req, res, next) => {
         status: 200,
         message: 'Student updated successfully',
         student: updatedStudent[1][0]
-      });
+      })
     })
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.put('/campuses/:campusId', (req, res, next) => {
   Campus.update({
@@ -141,10 +141,10 @@ api.put('/campuses/:campusId', (req, res, next) => {
         status: 200,
         message: 'Campus updated successfully',
         campus: updatedCampus[1][0]
-      });
+      })
     })
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.put('/teachers/:teacherId', (req, res, next) => {
   Teacher.update({
@@ -161,10 +161,10 @@ api.put('/teachers/:teacherId', (req, res, next) => {
         status: 200,
         message: 'Teacher updated successfully',
         teacher: updatedTeacher[1][0]
-      });
+      })
     })
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.delete('/campuses/:campusId', (req, res, next) => {
   Campus.destroy({
@@ -173,8 +173,8 @@ api.delete('/campuses/:campusId', (req, res, next) => {
     }
   })
     .then(res => res.send('Campus has been obliterated.'))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.delete('/students/:studentId', (req, res, next) => {
   Student.destroy({
@@ -183,8 +183,8 @@ api.delete('/students/:studentId', (req, res, next) => {
     }
   })
     .then(res => res.send('Student has been sent back to Earth.'))
-    .catch(next);
-});
+    .catch(next)
+})
 
 api.delete('/teachers/:teacherId', (req, res, next) => {
   Teacher.destroy({
@@ -193,7 +193,7 @@ api.delete('/teachers/:teacherId', (req, res, next) => {
     }
   })
     .then(res => res.send('Teacher freed from all duties.'))
-    .catch(next);
-});
+    .catch(next)
+})
 
-module.exports = api;
+module.exports = api
